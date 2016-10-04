@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use FloatingPoint\Stylist\Theme\Stylist;
+use Stylist;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->registerThemes();
     }
 
     /**
@@ -25,16 +25,15 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
 //        $this->registerDevPackages();
-        $this->registerThemes();
     }
 
     private function registerThemes()
     {
-        $themes = \Cache::remember('themes', function () {
+        $themes = \Cache::remember('available_themes', 5, function () {
             return ['sbadmin', 'metronic', 'bootstrap', 'bootswatch'];
-        }, 1);
+        });
         foreach ($themes as $theme) {
-            Stylist::register(resource_path('themes/' . $theme));
+            Stylist::registerPath(resource_path('themes/' . $theme));
         }
     }
 

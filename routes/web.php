@@ -19,3 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/theme/switch/{theme}', 'HomeController@switchTheme');
+
+
+Route::get('theme/{path?}', 'HomeController@showPage')->where('path', '(.*)');

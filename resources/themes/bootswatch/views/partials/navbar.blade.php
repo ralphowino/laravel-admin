@@ -1,1 +1,1 @@
-Bootstrap Navbar
+Bootswatch Navbar

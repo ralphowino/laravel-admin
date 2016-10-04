@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Stylist;
 
 class ThemedPages
 {
@@ -15,8 +16,11 @@ class ThemedPages
      */
     public function handle($request, Closure $next)
     {
-        $theme = \Session::get('theme', 'sbadmin');
-        \Stylist::activate($theme);
+        $theme = \Session::get('current_theme', 'SB Admin');
+        if (\Stylist::has($theme)) {
+            \Stylist::activate($theme);
+        }
+
         return $next($request);
     }
 }
