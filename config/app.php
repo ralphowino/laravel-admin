@@ -167,7 +167,7 @@ return [
          * Package Service Providers...
          */
 
-        //
+        FloatingPoint\Stylist\StylistServiceProvider::class,
 
         /*
          * Application Service Providers...
