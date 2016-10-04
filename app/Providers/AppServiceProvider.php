@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
     private function registerThemes()
     {
         $themes = \Cache::remember('available_themes', 5, function () {
-            return ['sbadmin', 'metronic', 'bootstrap', 'bootswatch'];
+            return ['sbadmin', 'metronic', 'bootstrap', 'bootswatch','admin-lte','gentelella'];
         });
         foreach ($themes as $theme) {
             Stylist::registerPath(resource_path('themes/' . $theme));

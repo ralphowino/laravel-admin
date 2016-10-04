@@ -15,5 +15,17 @@ require('laravel-elixir-vue');
 
 elixir(mix => {
     mix.sass('app.scss')
-       .webpack('app.js');
+        .copy('node_modules/font-awesome/fonts', 'public/fonts')
+        .copy('node_modules/bootstrap-sass/assets/fonts/bootstrap', 'public/fonts')
+        .copy('resources/assets/img', 'public/img')
+        .webpack('app.js');
+
+    //SB-Admin Assets
+    require('./resources/assets/themes/sbadmin/gulpfile')(mix);
+
+    //adminLTE Assets
+    require('./resources/assets/themes/adminLTE/gulpfile')(mix);
+
+    //Gentelella Assets
+    require('./resources/assets/themes/gentelella/gulpfile')(mix);
 });

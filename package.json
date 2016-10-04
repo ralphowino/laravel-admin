@@ -14,5 +14,19 @@
     "lodash": "^4.14.0",
     "vue": "^1.0.26",
     "vue-resource": "^0.9.3"
+  },
+  "dependencies": {
+    "bootstrap-datepicker": "^1.6.4",
+    "bootstrap3-wysihtml5-npm": "^0.3.3-npm.12",
+    "daterangepicker": "0.0.3",
+    "fastclick": "^1.0.6",
+    "font-awesome": "^4.6.3",
+    "jquery-knob": "^1.2.11",
+    "jquery-slimscroll": "^1.3.8",
+    "jquery-sparkline": "^2.3.2",
+    "jquery-ui": "^1.12.1",
+    "jvectormap": "^2.0.4",
+    "morris.js": "^0.5.0",
+    "raphael": "^2.2.6"
   }
 }
