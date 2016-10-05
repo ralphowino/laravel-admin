@@ -1,6 +1,6 @@
 {
   "name": "Metronic",
   "routes": {
-    "default": "theme/dashboard"
+    "default": "theme/index"
   }
 }

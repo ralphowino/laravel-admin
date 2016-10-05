@@ -21,11 +21,14 @@ elixir(mix => {
         .webpack('app.js');
 
     //SB-Admin Assets
-    require('./resources/assets/themes/sbadmin/gulpfile')(mix);
+    require('./resources/assets/themes/sbadmin')(mix);
 
     //adminLTE Assets
-    require('./resources/assets/themes/adminLTE/gulpfile')(mix);
+    require('./resources/assets/themes/adminLTE')(mix);
 
     //Gentelella Assets
-    require('./resources/assets/themes/gentelella/gulpfile')(mix);
+    require('./resources/assets/themes/gentelella')(mix);
+
+    //Metronic Assets
+    require('./resources/assets/themes/metronic')(mix);
 });
