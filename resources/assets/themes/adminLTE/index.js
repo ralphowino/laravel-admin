@@ -6,6 +6,8 @@ module.exports = function (mix) {
     mix
         .scripts([
             `${vendorPath}/jquery-ui/jquery-ui.min.js`,
+            `${vendorPath}/datatables/jquery.dataTables.min.js`,
+            `${vendorPath}/datatables/dataTables.bootstrap.min.js`,
             `${vendorPath}/morrisjs/morris.js`,
             `${vendorPath}/raphael/raphael.min.js`,
             `${vendorPath}/chartjs/Chart.min.js`,
@@ -30,10 +32,9 @@ module.exports = function (mix) {
             `${vendorPath}/input-mask/jquery.inputmask.js`,
             `${vendorPath}/input-mask/jquery.inputmask.date.extensions.js`,
             `${vendorPath}/input-mask/input-mask/jquery.inputmask.extensions.js`,
-            `${vendorPath}/input-mask/colorpicker/bootstrap-colorpicker.min.js`,
-            `${vendorPath}/input-mask/timepicker/bootstrap-timepicker.min.js`,
+            `${vendorPath}/bootstrap-colorpicker/js/bootstrap-colorpicker.js`,
+            `${vendorPath}/bootstrap-timepicker/js/bootstrap-timepicker.min.js`,
             `${vendorPath}/iCheck/icheck.min.js`,
-
             `${themePath}/js/app.min.js`,
             `${themePath}/js/pages/dashboard.js`,
             `${themePath}/js/demo.js`
@@ -52,8 +53,8 @@ module.exports = function (mix) {
             `${vendorPath}/ionslider/ion.rangeSlider.skinNice.css`,
             `${vendorPath}/bootstrap-slider/slider.css`,
             `${vendorPath}/iCheck/all.css`,
-            `${vendorPath}/plugins/colorpicker/bootstrap-colorpicker.min.css`,
-            `${vendorPath}/timepicker/bootstrap-timepicker.min.css`,
+            `${vendorPath}/bootstrap-colorpicker/css/colorpicker.css`,
+            `${vendorPath}/bootstrap-timepicker/css/bootstrap-timepicker.min.css`,
             `${vendorPath}/select2/select2.min.css`,
             `${vendorPath}/iCheck/minimal/_all.css`,
             `${vendorPath}/iCheck/square/_all.css`,
