@@ -48,6 +48,7 @@ class HomeController extends Controller
 
     public function showPage($path)
     {
+        $path = str_replace('/', '.', $path);
         if (\View::exists($path)) {
             return response()->view($path);
         }
