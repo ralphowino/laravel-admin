@@ -8,7 +8,6 @@ class LaravelAdminController extends Controller
 {
     public function switchTheme($theme)
     {
-        //dd($theme);
         $theme_path = str_replace("//", "/", config('laraveladmin.theme_path', resource_path('themes')) . '/' . $theme);
         if (\Stylist::has($theme)) {
             \Stylist::activate($theme);
@@ -20,9 +19,7 @@ class LaravelAdminController extends Controller
         }
 
         $theme = \Stylist::current();
-
         $meta = json_decode(file_get_contents($theme->getPath() . '/theme.json'), true);
-        dd(array_get($meta, 'routes.default', 'home'));
         \Session::put('current_theme', $theme->getName());
         return redirect(array_get($meta, 'routes.default', 'home'));
     }
