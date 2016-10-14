@@ -18,6 +18,7 @@
 </head>
 
 <body class="hold-transition">
+@include('laraveladmin::header')
 
 @yield('content')
 

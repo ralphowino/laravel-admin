@@ -1,5 +1,5 @@
 {
-  "name": "Metronic",
+  "name": "metronic",
   "routes": {
     "default": "theme/index"
   }

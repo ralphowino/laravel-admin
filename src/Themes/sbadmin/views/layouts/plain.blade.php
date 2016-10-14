@@ -20,6 +20,7 @@
 
 </head>
 <body>
+@include('laraveladmin::header')
 @yield('content')
 <script src="js/app.js"></script>
 <script src="js/sbadmin.js"></script>

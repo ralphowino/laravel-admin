@@ -1,4 +1,4 @@
 {
-  "name":"Bootswatch",
-  "parent" : "Bootstrap"
+  "name":"bootswatch",
+  "parent" : "bootstrap"
 }

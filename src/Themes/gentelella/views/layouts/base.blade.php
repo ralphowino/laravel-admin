@@ -15,6 +15,8 @@
 </head>
 
 <body class="nav-md @yield('body_css')">
+@include('laraveladmin::header')
+
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col @yield('menu/pages_css')">
