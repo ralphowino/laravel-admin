@@ -1,13 +1,7 @@
-<?php
+<?php namespace Ralphowino\LaravelAdmin;
 
-namespace Ralphowino\LaravelAdmin;
-
-use Illuminate\Routing\Controller;
-
-class LaravelAdminController extends Controller
+class LaravelAdminController extends \Illuminate\Routing\Controller
 {
-    private $package_name = 'laraveladmin';
-
     public function showPage($path)
     {
         $path = str_replace('/', '.', $path);
@@ -16,5 +10,4 @@ class LaravelAdminController extends Controller
         }
         abort(404);
     }
-
 }
