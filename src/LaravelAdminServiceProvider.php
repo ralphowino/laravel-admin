@@ -2,9 +2,15 @@
 
 namespace Ralphowino\LaravelAdmin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Kernel;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Ralphowino\LaravelAdmin\Commands\ControllerGenerator;
+use Ralphowino\LaravelAdmin\Commands\Init;
+use Ralphowino\LaravelAdmin\Commands\MigrationGenerator;
+use Ralphowino\LaravelAdmin\Commands\ModelGenerator;
+use Ralphowino\LaravelAdmin\Commands\ResourceGenerator;
 
 class LaravelAdminServiceProvider extends ServiceProvider
 {
@@ -36,6 +42,17 @@ class LaravelAdminServiceProvider extends ServiceProvider
         });
 
         $router->pushMiddlewareToGroup('web', ActivateThemeMiddleware::class);
+
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Init::class,
+                ResourceGenerator::class,
+                ControllerGenerator::class,
+                ModelGenerator::class,
+                MigrationGenerator::class
+            ]);
+        }
     }
 
     /**

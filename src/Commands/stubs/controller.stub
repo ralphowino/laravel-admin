@@ -1,0 +1,20 @@
+<?php
+
+namespace DummyNamespace;
+
+use BaseControllerName;
+use ResourceNamespace;
+
+class DummyClass extends BaseController
+{
+
+    protected $model;
+    protected $query;
+
+    public function __construct(ResourceName $model)
+    {
+        $this->model = $model;
+        $this->query = $model;
+        parent::__construct();
+    }
+}
