@@ -2,12 +2,10 @@
     "name": "ralphowino/laravel-admin",
     "description": "Switch between different admin themes easily",
     "require": {
-        "floatingpoint/stylist": "0.4.*"
+        "floatingpoint/stylist": "0.4.*",
+        "anahkiasen/former": "^4.0"
     },
     "autoload": {
-        "classmap": [
-            "database"
-        ],
         "psr-4": {
             "App\\": "app/",
             "Ralphowino\\LaravelAdmin\\":"src"

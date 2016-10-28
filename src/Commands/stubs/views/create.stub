@@ -1,0 +1,11 @@
+@extends('layouts.app')
+@section('content')
+    <div class="col-sm-12">
+    {!! Former::open(['url' => 'modelPlaceholder', 'method' => 'post', 'files' => true])!!}
+        @foreach($fields as $field)
+            {!! Former::text($field)->label(Str::studly($field)) !!}
+        @endforeach
+        {!! Former::actions( Button::submit('Submit'), Button::reset('Reset') ) !!}
+    {!! Former::close() !!}
+    </div>
+@endsection

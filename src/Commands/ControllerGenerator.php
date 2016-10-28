@@ -54,10 +54,14 @@ class ControllerGenerator extends Generator
 
     public function fire()
     {
-        if ($this->option('plain')) {
-            $this->call('make:controller', ['name' => $this->getNameInput()]);
-        } else {
-            parent::fire();
+        try {
+            if ($this->option('plain')) {
+                $this->call('make:controller', ['name' => $this->getNameInput()]);
+            } else {
+                parent::fire();
+            }
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
         }
     }
 
@@ -77,7 +81,10 @@ class ControllerGenerator extends Generator
         if (!$base) {
             return 'Controller';
         }
-
+        /*if (!class_exists($base)) {
+            $this->call('resource:init');
+            return $this->getBaseController();
+        }*/
         return $base;
     }
 

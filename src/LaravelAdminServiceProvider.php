@@ -4,6 +4,9 @@ namespace Ralphowino\LaravelAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Kernel;
+use Former\Facades\Former;
+use Former\FormerServiceProvider;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Ralphowino\LaravelAdmin\Commands\ControllerGenerator;
@@ -11,6 +14,7 @@ use Ralphowino\LaravelAdmin\Commands\Init;
 use Ralphowino\LaravelAdmin\Commands\MigrationGenerator;
 use Ralphowino\LaravelAdmin\Commands\ModelGenerator;
 use Ralphowino\LaravelAdmin\Commands\ResourceGenerator;
+use Ralphowino\LaravelAdmin\Commands\ViewGenerator;
 
 class LaravelAdminServiceProvider extends ServiceProvider
 {
@@ -50,7 +54,8 @@ class LaravelAdminServiceProvider extends ServiceProvider
                 ResourceGenerator::class,
                 ControllerGenerator::class,
                 ModelGenerator::class,
-                MigrationGenerator::class
+                MigrationGenerator::class,
+                ViewGenerator::class
             ]);
         }
     }
@@ -63,6 +68,8 @@ class LaravelAdminServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register("\\FloatingPoint\\Stylist\\StylistServiceProvider");
+        $this->app->register(FormerServiceProvider::class);
+        AliasLoader::getInstance()->alias('Former', Former::class);
 
         if (!$this->app->routesAreCached()) {
             require __DIR__ . '/routes.php';

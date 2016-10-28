@@ -44,6 +44,7 @@ class BaseController extends LaravelController
      */
     public function create()
     {
+        $this->data['fields'] = $this->tableFields();
         return view($this->prefix . '.create', $this->data);
     }
 
@@ -81,6 +82,7 @@ class BaseController extends LaravelController
     public function edit($id)
     {
         $this->data['record'] = $this->model->findOrFail($id);
+        $this->data['fields'] = $this->tableFields();
         return view($this->prefix . '.edit', $this->data);
     }
 

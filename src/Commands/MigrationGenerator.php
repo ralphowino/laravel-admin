@@ -23,9 +23,16 @@ class MigrationGenerator extends Command
     protected $description = 'Generates migration';
 
 
-    public function handle(){
+    public function handle()
+    {
+        exec('composer dump-autoload 2>nul');
+
         $table = Str::plural(Str::snake(class_basename($this->argument('name'))));
-        $this->call('make:migration', ['name' => "create_{$table}_table", '--create' => $table]);
+        try {
+            $this->call('make:migration', ['name' => "create_{$table}_table", '--create' => $table]);
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+        }
     }
 
     protected function getArguments()

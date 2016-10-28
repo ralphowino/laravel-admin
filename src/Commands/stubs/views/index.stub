@@ -1,0 +1,21 @@
+@extends('layouts.app')
+@section('content')
+    <div class="col-sm-12">
+        <table>
+            <thead>
+            @foreach($data['columns'] as $column)
+                <th>{{$column}}</th>
+            @endforeach
+            </thead>
+            <tbody>
+            <tr>
+                @foreach($data['records'] as $record)
+                    @foreach(get_object_vars($record) as $prop => $value)
+                        <td>{{$value}}</td>
+                    @endforeach
+                @endforeach
+            </tr>
+            </tbody>
+        </table>
+    </div>
+@endsection

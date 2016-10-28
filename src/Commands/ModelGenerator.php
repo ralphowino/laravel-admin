@@ -48,4 +48,13 @@ class ModelGenerator extends Generator
     {
         return $rootNamespace . '\Data\Models';
     }
+
+    public function fire()
+    {
+        try {
+            parent::fire();
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+        }
+    }
 }
